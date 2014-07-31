@@ -107,9 +107,13 @@ g('game').addEventListener(endEvent, function(e) {
     if (fingerMatch[currentSymbol] == fingers) {
         next();
         g('score').innerHTML = '杀死：' + (++score);
-        slash('white');
-    } else {
         slash('red');
+        g('current').style.webkitTransform = (score % 2) ? 'scale(-1, 1)' : '';
+    } else {
+        g('current').classList.add('shake');
+        setTimeout(function() {
+            g('current').classList.remove('shake');
+        }, 80);
     }
     fingers = 0;
 });
