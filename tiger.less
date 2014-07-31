@@ -1,0 +1,113 @@
+.transition(@value) {
+    -webkit-transition: @value;
+    -moz-transition: @value;
+    -ms-transition: @value;
+    -o-transition: @value;
+    transition: @value;
+}
+
+html, body, #teach {
+    margin: 0;
+    padding: 0;
+}
+
+#teach {
+    padding: 20px;
+}
+
+#teach .info {
+    text-align: middle;
+    span {
+        vertical-align: middle;
+    }
+}
+
+#start {
+    display: block;
+    position: absolute;
+    height: 50px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    line-height: 50px;
+    text-align: center;
+    background: red;
+    color: white;
+    border: none;
+    padding: 0;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+
+    &:hover, &:active {
+        background: darken(#f00, 10%);
+    }
+}
+
+#game {
+    background: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    img {
+        display: block;
+        position: absolute;
+    }
+    #current {
+        width: 200px;
+        height: 200px;
+        top: 100px;
+        left: 50%;
+        margin-left: -100px;
+    }
+    #next {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        left: 30px;
+    }
+}
+
+#score {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 28px;
+    color: red;
+}
+
+#slash {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    &.play {
+        -webkit-animation: fadeout 100ms;
+    }
+}
+
+#timer {
+    display: none;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 150px;
+    height: 10px;
+    font-size: 20px;
+    text-align: center;
+    padding: 0;
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
